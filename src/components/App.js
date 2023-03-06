@@ -1,12 +1,15 @@
+import { Route, Routes } from 'react-router-dom';
 import '../styles/App.scss';
 import brunaPhoto from '../images/bruna.jpeg';
 import sofiaPhoto from '../images/foto-sofia.jpg';
 import nataliaPhoto from '../images/natalia3.jpg';
 import Header from './Header';
 import Footer from './Footer';
+import Hero from './Hero';
 import Skills from './Skills';
 import Team from './Team';
 import Members from './Members';
+import Contact from './Contact';
 
 function App() {
   const bruna = {
@@ -41,52 +44,55 @@ function App() {
     email: 'sofia.gracia@gmail.com',
     photo: sofiaPhoto,
   };
-  // VARIABLES ESTADO
-
-  // USEEFFECT ?
-
-  // FUNCIONES HANDLER
-
-  // FUNCIONES Y VARIABLES QUE AYUDEN A RENDERIZAR HTML
-
-  // HTML EN EL RETURN
 
   return (
     <div className="App">
       <Header />
-      <Skills />
-      <Team />
-      <Members
-        name={bruna.name}
-        description={bruna.description}
-        twitter={bruna.twitter}
-        linkedin={bruna.linkedin}
-        github={bruna.github}
-        email={bruna.email}
-        photo={bruna.photo}
-        class={'left'}
-      />
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Skills />
+              <Team />
+              <Members
+                name={bruna.name}
+                description={bruna.description}
+                twitter={bruna.twitter}
+                linkedin={bruna.linkedin}
+                github={bruna.github}
+                email={bruna.email}
+                photo={bruna.photo}
+                class={'left'}
+              />
 
-      <Members
-        name={natalia.name}
-        description={natalia.description}
-        twitter={natalia.twitter}
-        linkedin={natalia.linkedin}
-        github={natalia.github}
-        emal={natalia.email}
-        photo={natalia.photo}
-        class={'right'}
-      />
-      <Members
-        name={sofia.name}
-        description={sofia.description}
-        twitter={sofia.twitter}
-        linkedin={sofia.linkedin}
-        github={sofia.github}
-        email={sofia.email}
-        photo={sofia.photo}
-        class={'left'}
-      />
+              <Members
+                name={natalia.name}
+                description={natalia.description}
+                twitter={natalia.twitter}
+                linkedin={natalia.linkedin}
+                github={natalia.github}
+                emal={natalia.email}
+                photo={natalia.photo}
+                class={'right'}
+              />
+              <Members
+                name={sofia.name}
+                description={sofia.description}
+                twitter={sofia.twitter}
+                linkedin={sofia.linkedin}
+                github={sofia.github}
+                email={sofia.email}
+                photo={sofia.photo}
+                class={'left'}
+              />
+            </>
+          }
+        />
+        <Route path="/contact" element={<Contact />}></Route>
+      </Routes>
       <Footer />
     </div>
   );

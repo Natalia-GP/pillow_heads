@@ -1,5 +1,11 @@
 @import 'core/reset';
-
-/*
-  Aquí puedes poner tu código Sass
-*/
+@import 'core/variables';
+@import 'core/mixin';
+@import 'components/Footer';
+@import 'components/Header';
+@import 'components/Hero';
+@import 'components/Members';
+@import 'components/skills';
+@import 'components/Team';
+@import 'layout/Index';
+@import 'layout/Contact';

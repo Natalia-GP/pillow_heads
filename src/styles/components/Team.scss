@@ -1,0 +1,52 @@
+.team {
+    padding: 0.65rem;
+    text-align: center;   
+    margin: 2rem 0.7rem 2rem 0.7rem;
+    color: $secondary-text-color;  
+    
+    @include tablet {
+       margin: 0rem 2rem 2rem 2rem;
+    }
+    @include desktop{
+        padding: 0.65rem 14rem 1.7rem 14rem;   
+    }
+}
+#equipo {
+    scroll-margin-top: 100px; 
+}
+.text-style-5 {
+    text-transform: uppercase;
+    font-family: $text-title;
+    font-size: 24px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.88;
+    letter-spacing: normal;
+    text-align: center;
+    color: $secondary-color;
+    gap: 5px;    
+}
+.team-title {
+    margin-bottom: 1rem;
+    padding-top: 2.5rem;
+    @media all and (min-width: 768px) {
+        color: $primary-color;
+    }
+}
+.italic{
+    font-style: italic;
+}
+.text-team1 {
+    font-size: 16px;
+    color: $primary-text-color;
+    font-family: $text-font;
+    line-height: 1.5;
+    padding-bottom: 1.7rem;
+}
+.text-team2 {
+    font-size: 16px;
+    color: $primary-text-color;
+    font-family: $text-font;
+    line-height: 1.5;
+}

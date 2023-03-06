@@ -1,0 +1,62 @@
+.skills {
+    color: $secondary-text-color;
+    background-color: $fourth-color;
+    padding: 2rem 1rem 3.7rem 1rem;
+    text-align: center;   
+    
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 3rem;
+    }
+    @include desktop {
+        gap: 4rem;
+        padding:2rem 6rem 2.7rem 6rem;
+    }
+    &__strength {
+        margin-bottom: 1.7rem;
+        @include tablet {
+            min-width: 45%;
+            padding: 0 0rem 0 2rem;
+        }
+    }
+    &__weakness{
+        @include tablet {
+            min-width: 45%; 
+            padding: 0 2rem 0 0;
+        }
+    }
+    
+    &__title {
+    font-family: $text-title; 
+    font-size: 1.6rem;  
+    font-weight: 500;  
+    font-stretch: normal;  
+    font-style: normal;  
+    line-height: 2.05;  
+    letter-spacing: normal;  
+    text-align: center;  
+    color: $primary-color; 
+    @include tablet {
+        padding-bottom: 1rem; 
+    }
+}
+    &__text {
+    font-size: 16px;
+    font-family: $text-font;
+    color: $primary-text-color;
+    line-height: 1.5;
+    }
+}    
+
+.square {
+    width: 1.875rem;
+    height: 1.875rem;
+    background-color: $tertiary-color;    
+    position: absolute;
+    left: 50%;    
+    transform: translate(-50%, -50%) rotate(45deg);  
+    
+}
+

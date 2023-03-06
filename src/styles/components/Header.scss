@@ -1,0 +1,75 @@
+.header {
+  text-align: center;
+  background-color: $primary-header;
+  color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  @include tablet {
+    height: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.header__title {
+  font-size: 18px;
+  font-family: $text-title;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-shadow: $fourth-color 2px 1px 4px;  
+  padding: 1.7rem;
+  @include tablet {
+    text-align: left;
+    width: 40vw;
+  }
+  a {
+    text-decoration: none;
+    color: #566B87;
+    
+   
+  }
+}
+.header__nav {
+  background-color: $secondary-header;
+  @include tablet {
+    background-color: transparent;
+  }
+}
+.header__nav--list {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.7rem;
+  padding-right: 0.7rem;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  @include desktop {
+    gap: 3rem;
+  }
+  a {
+    text-decoration: none;
+    color: $tertiary-color;
+    &:hover {
+      color: $membersname-color;
+      @include tablet {
+        color: $tertiary-color;
+      }
+    }
+    @include tablet {
+      color: $details-color;      
+    }      
+  }
+}
+
+.nav__list-item {
+  text-transform: uppercase;
+  font-family: $text-title;
+  font-size: 15px;
+  
+}
+

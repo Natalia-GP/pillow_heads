@@ -20,7 +20,7 @@ const Contact = () => {
           method="post"
         >
           <div className="form__label--name">
-            <label className="form__label--text asterisk" for="fullName">
+            <label className="form__label--text asterisk" htmlFor="fullName">
               Nombre completo
             </label>
             <input
@@ -34,7 +34,7 @@ const Contact = () => {
           </div>
           <div className="form__label--elements">
             <div className="form__label--mail">
-              <label className="form__label--text asterisk" for="email">
+              <label className="form__label--text asterisk" htmlFor="email">
                 Email
               </label>
               <input
@@ -47,7 +47,7 @@ const Contact = () => {
               ></input>
             </div>
             <div className="form__label--tel">
-              <label className="form__label--text" for="phone">
+              <label className="form__label--text" htmlFor="phone">
                 Teléfono
               </label>
               <input
@@ -60,7 +60,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="form__label--msg">
-            <label className="form__label--text asterisk" for="message">
+            <label className="form__label--text asterisk" htmlFor="message">
               Mensaje
             </label>
             <textarea

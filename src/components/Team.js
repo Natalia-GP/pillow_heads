@@ -1,6 +1,7 @@
-const Team = () => {
+
+const Team = (props) => {
   return (
-    <article className="team" id="team">
+    <article className="team" id="team" ref={props.myRef}>
       <h2 className="text-style-5 team-title">Equipo</h2>
       <p className="text-team1">
         <span className="italic">

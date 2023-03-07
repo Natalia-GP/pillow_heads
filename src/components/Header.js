@@ -8,7 +8,8 @@ const Header = (props) => {
       <nav className="header__nav">
         <ul className="header__nav--list">
           <li className="nav__list-item">
-            <a href="#team" onClick={props.scrollToTeam}>Equipo</a>
+            <button onClick={() => props.team.current.scrollIntoView()}>Equipo</button>
+            {/* button onClick={() => scollToRef.current.scrollIntoView()}> */}
           </li>
           <li className="nav__list-item">
             <a href="#members">Quiénes somos</a>

@@ -1,7 +1,7 @@
 
 const Team = (props) => {
   return (
-    <article className="team" id="team" ref={props.myRef}>
+    <article className="team" id="team" ref={props.team}>
       <h2 className="text-style-5 team-title">Equipo</h2>
       <p className="text-team1">
         <span className="italic">

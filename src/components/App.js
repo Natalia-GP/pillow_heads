@@ -61,15 +61,16 @@ function App() {
       class: 'right',
     },
   ]
-  const myRef = useRef(null);
+  const team = useRef();
+  const members = useRef();
   const scrollToTeam = () => {
-    myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    team.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
 
   return (
     <div className="App">
-      <Header scrollToTeam={scrollToTeam} />
+      <Header team={team} />
       <Routes>
         <Route
           exact
@@ -78,7 +79,7 @@ function App() {
             <>
               <Hero />
               <Skills />
-              <Team myRef={myRef} />
+              <Team team={team} />
               <Members pillows={pillows} />
             </>
           }

@@ -3,12 +3,12 @@ const Header = (props) => {
   return (
     <header className="header">
       <h1 className="header__title">
-        <Link to='/'>Pillow Heads</Link>
+        <Link to="/">Pillow Heads</Link>
       </h1>
       <nav className="header__nav">
         <ul className="header__nav--list">
           <li className="nav__list-item">
-            <button onClick={() => props.team.current.scrollIntoView()}>Equipo</button>
+            <Link to="/hash-scroll#hash-team">Equipo</Link>
             {/* button onClick={() => scollToRef.current.scrollIntoView()}> */}
           </li>
           <li className="nav__list-item">

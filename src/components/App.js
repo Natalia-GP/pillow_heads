@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import '../styles/App.scss';
-import React, { useRef } from 'react';
 import anaPhoto from '../images/ana.jpg';
 import brunaPhoto from '../images/bruna.jpeg';
 import sofiaPhoto from '../images/foto-sofia.jpg';

@@ -1,5 +1,7 @@
+
 const Contact = () => {
   return (
+
     <main>
       <section className="hero-contact"></section>
       <article className="main-article">
@@ -84,6 +86,7 @@ const Contact = () => {
         </form>
       </section>
     </main>
+
   );
 };
 

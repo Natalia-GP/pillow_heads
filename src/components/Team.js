@@ -1,7 +1,7 @@
 import { HashScroll } from 'react-hash-scroll';
 const Team = (props) => {
   return (
-    <HashScroll hash="#hash-team">
+    <HashScroll hash="#team" position='start'>
       <article className="team" id="team" ref={props.team}>
         <h2 className="text-style-5 team-title">Equipo</h2>
         <p className="text-team1">

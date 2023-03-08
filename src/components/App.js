@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import '../styles/App.scss';
 import anaPhoto from '../images/ana.jpg';
@@ -13,6 +14,9 @@ import Members from './Members';
 import Contact from './Contact';
 
 function App() {
+
+  const [statusMessage, setStatusMessage] = useState("");
+
   const pillows = [
     {
       name: 'Ana Vellisco',
@@ -76,7 +80,7 @@ function App() {
             </>
           }
         />
-        <Route path="/contact" element={<Contact />}></Route>
+        <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} />}></Route>
       </Routes>
       <Footer />
     </div>

@@ -1,7 +1,21 @@
+import emailjs from '@emailjs/browser';
+import React, { useRef } from 'react';
 
-const Contact = () => {
+const Contact = (props) => {
+  const form = useRef();
+  const sendEmail = (e) => {
+
+    e.preventDefault(); // prevents the page from reloading when you hit “Send”
+
+    emailjs.sendForm('service_e1vnqtu', 'template_g7fxu39', form.current, '_yHrBbIBxEQvjsaAu')
+      .then((result) => {
+        props.setStatusMessage("¡Email enviado correctamente!")
+      }, (error) => {
+        props.setStatusMessage("Por favor vuelve a intentarlo.")
+      });
+  };
+
   return (
-
     <main>
       <section className="hero-contact"></section>
       <article className="main-article">
@@ -17,6 +31,8 @@ const Contact = () => {
       </article>
       <section className="section__form">
         <form
+          ref={form}
+          onSubmit={sendEmail}
           className="form__label"
           action="https://adalab-server-form.herokuapp.com/"
           method="post"
@@ -81,12 +97,12 @@ const Contact = () => {
                 id="submit"
                 value="Enviar"
               ></input>
+              <p className="statusMessage">{props.statusMessage}</p>
             </div>
           </div>
         </form>
       </section>
     </main>
-
   );
 };
 

@@ -67,6 +67,7 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <main>
       <Routes>
         <Route
           exact
@@ -82,6 +83,7 @@ function App() {
         />
         <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} />}></Route>
       </Routes>
+      </main>
       <Footer />
     </div>
   );

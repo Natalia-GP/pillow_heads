@@ -6,16 +6,16 @@ const Header = (props) => {
         <Link to="/#hero">Pillow Heads</Link>
       </h1>
       <nav className="header__nav">
-        <ul className="header__nav--list">
-          <li className="nav__list-item">
+        <ul className="header__nav__list">
+          <li className="header__nav__list__item">
             <Link to="/#team">Equipo</Link>
             {/* button onClick={() => scollToRef.current.scrollIntoView()}> */}
           </li>
-          <li className="nav__list-item">
+          <li className="header__nav__list__item">
             <Link to="/#members">Quiénes somos</Link>
             {/* <a href="#members">Quiénes somos</a> */}
           </li>
-          <li className="nav__list-item">
+          <li className="header__nav__list__item">
             <Link to="/contact">Contacto</Link>
           </li>
         </ul>

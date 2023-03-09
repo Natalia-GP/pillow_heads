@@ -16,33 +16,33 @@ const Contact = (props) => {
   };
 
   return (
-    <main>
-      <section className="hero-contact"></section>
-      <article className="main-article">
-        <h1 className="main-title">Contacto</h1>
-        <p className="main-par">
+    <>
+      <section className="contact__image"></section>
+      <article className="contact__article">
+        <h1 className="contact__article__title">Contacto</h1>
+        <p className="contact__article__text">
           Puedes ponerte en contacto con nosotras rellenando este formulario con
           tus datos y consultas. Te responderemos lo antes posible.
         </p>
-        <p className="main-par-small">
+        <p className="contact__article__comment">
           Todos los campos marcados con{' '}
-          <span className="main-par-asterisk">*</span> son obligatorios
+          <span className="contact__article__comment__asterisk">*</span> son obligatorios
         </p>
       </article>
-      <section className="section__form">
+      <section className="contact">
         <form
           ref={form}
           onSubmit={sendEmail}
-          className="form__label"
+          className="contact__form"
           action="https://adalab-server-form.herokuapp.com/"
           method="post"
         >
-          <div className="form__label--name">
-            <label className="form__label--text asterisk" htmlFor="fullName">
+          <div className="contact__form__name">
+            <label className="contact__form__name__label asterisk" htmlFor="fullName">
               Nombre completo
             </label>
             <input
-              className="field"
+              className="contact__form__name__input"
               type="text"
               id="fullName"
               name="fullName"
@@ -50,13 +50,13 @@ const Contact = (props) => {
               required
             ></input>
           </div>
-          <div className="form__label--elements">
-            <div className="form__label--mail">
-              <label className="form__label--text asterisk" htmlFor="email">
+          <div className="contact__form__mailTel">
+            <div className="contact__form__mailTel__mail">
+              <label className="contact__form__mailTel__mail__label asterisk" htmlFor="email">
                 Email
               </label>
               <input
-                className="field form__elements--mail"
+                className="contact__form__mailTel__mail__input"
                 type="email"
                 id="email"
                 name="email"
@@ -69,7 +69,7 @@ const Contact = (props) => {
                 Teléfono
               </label>
               <input
-                className="field form__elements--tel"
+                className="form__elements--tel"
                 type="tel"
                 id="phone"
                 name="phone"
@@ -82,7 +82,7 @@ const Contact = (props) => {
               Mensaje
             </label>
             <textarea
-              className="field textarea"
+              className="textarea"
               name="message"
               id="message"
               cols="30"
@@ -102,7 +102,7 @@ const Contact = (props) => {
           </div>
         </form>
       </section>
-    </main>
+    </>
   );
 };
 

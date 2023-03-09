@@ -4,7 +4,7 @@ const Hero = () => {
     <HashScroll hash="#hero" position='start'>
       <section className="hero">
         <div className="hero__div">
-          <p className="slogan">
+          <p className="hero__div__text">
             No hay código que se resista a una buena almohada.
           </p>
         </div>

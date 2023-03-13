@@ -4,15 +4,23 @@ import React, { useRef } from 'react';
 const Contact = (props) => {
   const form = useRef();
   const sendEmail = (e) => {
-
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
 
-    emailjs.sendForm('service_e1vnqtu', 'template_g7fxu39', form.current, '_yHrBbIBxEQvjsaAu')
-      .then((result) => {
-        props.setStatusMessage("¡Email enviado correctamente!")
-      }, (error) => {
-        props.setStatusMessage("Por favor vuelve a intentarlo.")
-      });
+    emailjs
+      .sendForm(
+        'service_e1vnqtu',
+        'template_g7fxu39',
+        form.current,
+        '_yHrBbIBxEQvjsaAu'
+      )
+      .then(
+        (result) => {
+          props.setStatusMessage('¡Email enviado correctamente!');
+        },
+        (error) => {
+          props.setStatusMessage('Por favor vuelve a intentarlo.');
+        }
+      );
   };
 
   return (
@@ -26,7 +34,8 @@ const Contact = (props) => {
         </p>
         <p className="contact__article__comment">
           Todos los campos marcados con{' '}
-          <span className="contact__article__comment__asterisk">*</span> son obligatorios
+          <span className="contact__article__comment__asterisk">*</span> son
+          obligatorios
         </p>
       </article>
       <section className="contact">
@@ -38,7 +47,10 @@ const Contact = (props) => {
           method="post"
         >
           <div className="contact__form__name">
-            <label className="contact__form__name__label asterisk" htmlFor="fullName">
+            <label
+              className="contact__form__name__label asterisk"
+              htmlFor="fullName"
+            >
               Nombre completo
             </label>
             <input
@@ -52,7 +64,10 @@ const Contact = (props) => {
           </div>
           <div className="contact__form__mailTel">
             <div className="contact__form__mailTel__mail">
-              <label className="contact__form__mailTel__mail__label asterisk" htmlFor="email">
+              <label
+                className="contact__form__mailTel__mail__label asterisk"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -64,12 +79,15 @@ const Contact = (props) => {
                 required
               ></input>
             </div>
-            <div className="form__label--tel">
-              <label className="form__label--text" htmlFor="phone">
+            <div className="contact__form__mailTel__tel">
+              <label
+                className="contact__form__mailTel__tel__label"
+                htmlFor="phone"
+              >
                 Teléfono
               </label>
               <input
-                className="form__elements--tel"
+                className="contact__form__mailTel__tel__input"
                 type="tel"
                 id="phone"
                 name="phone"
@@ -77,12 +95,15 @@ const Contact = (props) => {
               ></input>
             </div>
           </div>
-          <div className="form__label--msg">
-            <label className="form__label--text asterisk" htmlFor="message">
+          <div className="contact__form__msg">
+            <label
+              className="contact__form__msg__label asterisk"
+              htmlFor="message"
+            >
               Mensaje
             </label>
             <textarea
-              className="textarea"
+              className="contact__form__msg__textarea"
               name="message"
               id="message"
               cols="30"
@@ -90,16 +111,18 @@ const Contact = (props) => {
               placeholder="¿Qué necesitas?"
               required
             ></textarea>
-            <div className="form__label--send">
+            <div className="contact__form__msg__send">
               <input
-                className="send__button"
+                className="contact__form__msg__send__input"
                 type="submit"
                 id="submit"
                 value="Enviar"
               ></input>
-              <p className="statusMessage">{props.statusMessage}</p>
             </div>
           </div>
+          <p className="contact__form__msg__send__status">
+            {props.statusMessage}
+          </p>
         </form>
       </section>
     </>

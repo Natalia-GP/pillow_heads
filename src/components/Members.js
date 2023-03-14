@@ -9,10 +9,8 @@ const Members = (pillows) => {
   }
   return (
     <HashScroll hash="#members" position='start'>
-      <section className="who" id="members">
-        <div className="who-title-father">
-          <h2 className="who-title">Quiénes somos</h2>
-        </div>
+      <section className="members" id="members">
+        <h2 className="members__title">Quiénes somos</h2>
         {renderPillow(pillows)}
       </section>
     </HashScroll>

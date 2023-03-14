@@ -1,4 +1,4 @@
-.hero-contact {
+.contact__image {
   background-image: url('../../images/image.png');
   width: 100%;
   height: 300px;
@@ -6,7 +6,7 @@
   background-position: center;
 }
 
-.main-article {
+.contact__article {
   @include tablet {
     margin-left: 0.938rem;
     margin-right: 0.938rem;
@@ -16,178 +16,177 @@
   @include desktop {
     padding: 1.8rem 18.7rem 0 18.7rem;
   }
-}
+  &__title {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: $text-title;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 45px;
+    color: $primary-color;
+    text-transform: uppercase;
 
-.main-title {
-  margin-top: 2rem;
-  text-align: center;
-  font-family: $text-title;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 45px;
-  color: $primary-color;
-  text-transform: uppercase;
+    @include tablet {
+      margin-top: 0;
+    }
 
-  @include tablet {
-    margin-top: 0;
+    @include desktop {
+      margin-top: 1rem;
+    }
   }
-
-  @include desktop {
-    margin-top: 1rem;
+  &__text {
+    margin-top: 0.938rem;
+    text-align: center;
+    font-family: $text-font;
+    font-size: 16px;
+    line-height: 1.5;
+    color: $primary-text-color;
+    margin-left: 1.4rem;
+    margin-right: 1.4rem;
   }
-}
-
-.main-par {
-  margin-top: 0.938rem;
-  text-align: center;
-  font-family: $text-font;
-  font-size: 16px;
-  line-height: 1.5;
-  color: $primary-text-color;
-  margin-left: 1.4rem;
-  margin-right: 1.4rem;
-}
-
-.main-par-small {
-  margin-top: 2rem;
-  text-align: center;
-  font-family: $text-font;
-  font-size: 12px;
-  color: $primary-text-color;
-}
-
-.main-par-asterisk {
-  color: $secondary-color;
+  &__comment {
+    margin-top: 2rem;
+    text-align: center;
+    font-family: $text-font;
+    font-size: 12px;
+    color: $primary-text-color;
+    &__asterisk {
+      color: $secondary-color;
+    }
+  }
 }
 
 //FORM//
 
-.section__form {
+.contact {
   box-sizing: border-box;
   margin-top: 3.6rem;
   margin-bottom: 3.75rem;
   @include desktop {
     margin-bottom: 8rem;
   }
-}
-
-.form__label {
-  display: flex;
-  flex-direction: column;
-  margin: 0 1rem 0 1rem;
-  justify-content: center;
-  align-items: center;
-
-  @include tablet {
+  &__form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem 0 1rem;
     justify-content: center;
     align-items: center;
+
+    @include tablet {
+      justify-content: center;
+      align-items: center;
+    }
+    &__name {
+      display: flex;
+      flex-direction: column;
+      &__label {
+        @include label;
+      }
+      &__input {
+        @include input;
+      }
+    }
+    &__mailTel {
+      @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 2.8rem;
+      }
+      &__mail {
+        display: flex;
+        flex-direction: column;
+        @include desktop {
+          flex-grow: 1;
+        }
+        &__label {
+          @include label;
+        }
+        &__input {
+          @include input;
+          @include desktop {
+            width: 23.5rem;
+          }
+        }
+      }
+
+      &__tel {
+        display: flex;
+        flex-direction: column;
+
+        &__label {
+          @include label;
+        }
+
+        &__input {
+          @include input;
+          @include desktop {
+            width: 10rem;
+          }
+        }
+      }
+    }
+    &__msg {
+      display: flex;
+      flex-direction: column;
+
+      &__label {
+        @include label;
+      }
+
+      &__textarea {
+        height: 5.5rem;
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        padding-left: 1rem;
+        font-family: $text-font;
+
+        @include tablet {
+          width: 27.6rem;
+        }
+
+        @include desktop {
+          width: 37.6rem;
+        }
+      }
+
+      &__send {
+        display: flex;
+        justify-content: center;
+
+        &__input {
+          width: 18rem;
+          height: 2.81rem;
+          margin-top: 1.3rem;
+          background-color: $primary-color;
+          border: none;
+          border-radius: 4px;
+          font-size: 17px;
+          font-family: $text-font;
+          color: $tertiary-color;
+          text-transform: uppercase;
+          font-weight: 600;
+          @include tablet {
+            width: 12.8rem;
+          }
+          @include desktop {
+            width: 17.4rem;
+            width: 18.5rem;
+            height: 2.9rem;
+          }
+        }
+
+        &__status {
+          margin-top: 1rem;
+          font-family: $text-font;
+        }
+      }
+    }
   }
-}
-
-.field {
-  width: 16.7rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.81rem;
-  padding-left: 1rem;
-  height: 2.8rem;
-  border: solid 1px $secondary-text-color;
-
-  @include tablet {
-    width: 27.6rem;
-  }
-  @include desktop {
-    width: 37.5rem;
-  }
-}
-
-.textarea {
-  height: 5.5rem;
-  padding-top: 0.5rem;
-  font-family: $text-font;
-}
-
-.form__label--name {
-  display: flex;
-  flex-direction: column;
-}
-
-.form__label--text {
-  font-size: 14px;
-  color: $primary-text-color;
-  font-family: $text-font;
 }
 
 .asterisk::after {
   content: '*';
   color: $secondary-color;
   margin-left: 0.2rem;
-}
-
-.form__label--mail {
-  display: flex;
-  flex-direction: column;
-  @include desktop {
-    flex-grow: 1;
-  }
-}
-.form__elements--mail {
-  @include desktop {
-    width: 23.5rem;
-  }
-}
-
-.form__elements--tel {
-  @include desktop {
-    width: 10rem;
-  }
-}
-
-.form__label--tel {
-  display: flex;
-  flex-direction: column;
-}
-
-.form__label--msg {
-  display: flex;
-  flex-direction: column;
-}
-
-.form__label--elements {
-  @include desktop {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 2.8rem;
-  }
-}
-
-.form__label--send {
-  display: flex;
-  justify-content: center;
-
-  @include tablet {
-    align-self: flex-end;
-  }
-}
-
-.send__button {
-  width: 18rem;
-  height: 2.81rem;
-  margin-top: 1.3rem;
-  background-color: $primary-color;
-  border: none;
-  border-radius: 4px;
-  font-size: 17px;
-  font-family: $text-font;
-  color: $tertiary-color;
-  text-transform: uppercase;
-  font-weight: 600;
-  @include tablet {
-    width: 12.8rem;
-  }
-  @include desktop {
-    width: 17.4rem;
-    width: 18.5rem;
-    height: 2.9rem;
-  }
 }

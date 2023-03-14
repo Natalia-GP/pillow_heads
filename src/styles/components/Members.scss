@@ -1,19 +1,17 @@
-.who {
-    margin-bottom: 2rem;
-    @include tablet{
-        padding-left: 2rem;
-        padding-right: 2rem; 
-    }
-    @include desktop{
-        padding-left: 8rem;
-        padding-right: 8rem;  
-    }
-}
-#quienes{
-    scroll-margin-top: 100px; 
-}
+.members {
+  margin-bottom: 2rem;
 
-.who-title {
+  @include tablet {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  @include desktop {
+    padding-left: 8rem;
+    padding-right: 8rem;
+  }
+
+  &__title {
     padding: 2.37rem 0 1.27rem 0;
     background-color: $tertiary-color;
     color: $primary-color;
@@ -21,138 +19,145 @@
     text-align: center;
     font-size: 24px;
     font-weight: 500;
-    font-family: $text-title; 
+    font-family: $text-title;
     text-transform: uppercase;
     text-align: center;
-    @include tablet{
-        padding: 3.7rem 0 2.3rem 0; 
+    @include tablet {
+      padding: 3.7rem 0 2.3rem 0;
     }
+  }
+
+  &__article {
+    &__img {
+      width: 13rem;
+      height: 13rem;
+      border: solid 0.5rem $details-color;
+      border-radius: 4px;
+      object-fit: cover;
+      @include desktop {
+        width: 15rem;
+        height: 15rem;
+      }
+    }
+
+    &__div {
+      &__name {
+        font-weight: bold;
+        color: $membersname-color;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-family: $text-font;
+        font-size: 20px;
+        text-align: center;
+        @include tablet {
+          margin: 0rem 0.7rem 0.7rem 0.7rem;
+        }
+        @include desktop {
+          font-size: 26px;
+        }
+      }
+
+      &__text {
+        font-size: 16px;
+        text-align: center;
+        font-family: $text-font;
+        margin: 0rem 0.7rem 0.7rem 0.7rem;
+        color: $primary-text-color;
+        line-height: 1.5;
+        @include tablet {
+          text-align: left;
+        }
+        @include desktop {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+.members__socials {
+  padding-top: 20px;
+  padding-bottom: 23px;
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  color: $primary-color;
+  text-align: center;
+  @include tablet {
+    max-width: 40%;
+    margin: 0rem 0.7rem 0.7rem 0.7rem;
+  }
+  @include desktop {
+    gap: 0.7rem;
+  }
+
+  &__items {
+    &__icon {
+      color: $primary-color;
+      padding: 0.2rem;
+      @include desktop {
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+.members__socials__items::after {
+  font-weight: bolder;
+  content: "·";
+  margin: 0 0.2rem 0 0.2rem;
 }
 
 .left {
-    padding-top: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include tablet {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      margin-bottom: 2rem;
-      .text {
-        text-align: left;
-    }  
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+    .text {
+      text-align: left;
+    }
     .div--text {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 1.7rem;
-        }
-                
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 1.7rem;
     }
-    @include desktop {
-        align-items: flex-start;
-        margin-left: 1.7rem;
-    }
+  }
+  @include desktop {
+    align-items: flex-start;
+    margin-left: 1.7rem;
+  }
 }
 .right {
-    padding-top: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include tablet {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    @include tablet {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: flex-end;
-        text-align: right;        
-        margin-bottom: 2rem;  
-        .text {
-            text-align: right;
-        }  
-        .div--text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: 1.7rem;
-        }         
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    text-align: right;
+    margin-bottom: 2rem;
+    .text {
+      text-align: right;
     }
-    @include desktop {
-        align-items: flex-start;
-        margin-right: 1.7rem;
+    .div--text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 1.7rem;
     }
-}
-
-
-.img{
-    width: 13rem;
-    height: 13rem;
-    border: solid 0.5rem $details-color;
-    border-radius: 4px;
-    object-fit: cover; 
-    @include desktop{
-        width: 15rem;
-        height: 15rem;  
-    }     
-}
-
-.name {
-    font-weight: bold;
-    color:$membersname-color;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-family: $text-font;
-    font-size: 20px;
-    text-align: center;
-    @include tablet{
-        margin: 0rem 0.7rem 0.7rem 0.7rem;
-    }
-    @include desktop{
-        font-size: 26px;
-    }
-}
-
-.text {
-    font-size: 16px;
-    text-align: center;
-    font-family: $text-font;
-    margin: 0rem 0.7rem 0.7rem 0.7rem;
-    color: $primary-text-color;
-    line-height: 1.5;
-    @include tablet{
-        text-align: left;       
-    }
-    @include desktop{
-        font-size: 22px;
-    }
-}
-.social {
-    padding-top: 20px;
-    padding-bottom: 23px;
-    display: flex;
-    gap: 4px;
-    justify-content:center;
-    color: $primary-color;
-    text-align: center;
-    @include tablet {
-        max-width: 40%;
-        margin: 0rem 0.7rem 0.7rem 0.7rem;   
-    }
-    @include desktop {
-        gap:0.7rem;
-    }
-}
-
-.icon {
-    color: $primary-color;
-    padding:0.2rem;
-    @include desktop{
-        transform: scale(1.5);
-    }
-}
-.dots::after{
-    font-weight: bolder; 
-    content:"·";
-    margin:0 0.2rem 0 0.2rem;
+  }
+  @include desktop {
+    align-items: flex-start;
+    margin-right: 1.7rem;
+  }
 }

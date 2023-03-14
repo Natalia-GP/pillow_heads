@@ -16,6 +16,8 @@ import Contact from './Contact';
 function App() {
 
   const [statusMessage, setStatusMessage] = useState("");
+  const [telInput, setTelInput] = useState('');
+  const [telInputMessage, setTelInputMessage] = useState('');
 
   const pillows = [
     {
@@ -68,21 +70,21 @@ function App() {
     <div className="App">
       <Header />
       <main>
-      <Routes>
-        <Route
-          exact
-          path="/"
-          element={
-            <>
-              <Hero />
-              <Skills />
-              <Team />
-              <Members pillows={pillows} />
-            </>
-          }
-        />
-        <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} />}></Route>
-      </Routes>
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Skills />
+                <Team />
+                <Members pillows={pillows} />
+              </>
+            }
+          />
+          <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} telInput={telInput} setTelInput={setTelInput} telInputMessage={telInputMessage} setTelInputMessage={setTelInputMessage} />}></Route>
+        </Routes>
       </main>
       <Footer />
     </div>

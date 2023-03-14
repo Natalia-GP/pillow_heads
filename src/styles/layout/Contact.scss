@@ -16,6 +16,7 @@
   @include desktop {
     padding: 1.8rem 18.7rem 0 18.7rem;
   }
+
   &__title {
     margin-top: 2rem;
     text-align: center;
@@ -34,6 +35,7 @@
       margin-top: 1rem;
     }
   }
+
   &__text {
     margin-top: 0.938rem;
     text-align: center;
@@ -44,12 +46,14 @@
     margin-left: 1.4rem;
     margin-right: 1.4rem;
   }
+
   &__comment {
     margin-top: 2rem;
     text-align: center;
     font-family: $text-font;
     font-size: 12px;
     color: $primary-text-color;
+
     &__asterisk {
       color: $secondary-color;
     }
@@ -62,9 +66,11 @@
   box-sizing: border-box;
   margin-top: 3.6rem;
   margin-bottom: 3.75rem;
+
   @include desktop {
     margin-bottom: 8rem;
   }
+
   &__form {
     display: flex;
     flex-direction: column;
@@ -76,16 +82,20 @@
       justify-content: center;
       align-items: center;
     }
+
     &__name {
       display: flex;
       flex-direction: column;
+
       &__label {
         @include label;
       }
+
       &__input {
         @include input;
       }
     }
+
     &__mailTel {
       @include desktop {
         display: flex;
@@ -93,17 +103,29 @@
         justify-content: space-between;
         gap: 2.8rem;
       }
+
+      &__status {
+        margin-bottom: 1rem;
+        font-family: $text-font;
+        font-size: small;
+        color: red;
+      }
+
       &__mail {
         display: flex;
         flex-direction: column;
+
         @include desktop {
           flex-grow: 1;
         }
+
         &__label {
           @include label;
         }
+
         &__input {
           @include input;
+
           @include desktop {
             width: 23.5rem;
           }
@@ -120,12 +142,14 @@
 
         &__input {
           @include input;
+
           @include desktop {
             width: 10rem;
           }
         }
       }
     }
+
     &__msg {
       display: flex;
       flex-direction: column;
@@ -166,9 +190,11 @@
           color: $tertiary-color;
           text-transform: uppercase;
           font-weight: 600;
+
           @include tablet {
             width: 12.8rem;
           }
+
           @include desktop {
             width: 17.4rem;
             width: 18.5rem;

@@ -3,24 +3,41 @@ import React, { useRef } from 'react';
 
 const Contact = (props) => {
   const form = useRef();
+  const regTel = new RegExp(/^[0-9]+$/)
+  function validateTel(input) {
+    return regTel.test(input);
+  }
+  // function validarTelefono(inputTelefono) {
+  //   var regex = /^[0-9]+$/; // Expresión regular que verifica que el input contenga solo números
+  //   return regex.test(inputTelefono); // Devuelve true si el input es válido, false si no lo es
+  // }
+  const handleInputTel = (ev) => {
+    props.setTelInput(ev.target.value)
+  }
   const sendEmail = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
+    if (props.telInput) {
+      if (!validateTel(props.telInput)) {
+        props.setTelInputMessage('Teléfono no válido, este campo no es obligatorio')
+      } else {
+        emailjs
+          .sendForm(
+            'service_e1vnqtu',
+            'template_g7fxu39',
+            form.current,
+            '_yHrBbIBxEQvjsaAu'
+          )
+          .then(
+            (result) => {
+              props.setStatusMessage('¡Email enviado correctamente!');
+            },
+            (error) => {
+              props.setStatusMessage('Por favor vuelve a intentarlo.');
+            }
+          );
+      }
+    }
 
-    emailjs
-      .sendForm(
-        'service_e1vnqtu',
-        'template_g7fxu39',
-        form.current,
-        '_yHrBbIBxEQvjsaAu'
-      )
-      .then(
-        (result) => {
-          props.setStatusMessage('¡Email enviado correctamente!');
-        },
-        (error) => {
-          props.setStatusMessage('Por favor vuelve a intentarlo.');
-        }
-      );
   };
 
   return (
@@ -43,7 +60,7 @@ const Contact = (props) => {
           ref={form}
           onSubmit={sendEmail}
           className="contact__form"
-          action="https://adalab-server-form.herokuapp.com/"
+          // action="https://adalab-server-form.herokuapp.com/"
           method="post"
         >
           <div className="contact__form__name">
@@ -92,7 +109,11 @@ const Contact = (props) => {
                 id="phone"
                 name="phone"
                 placeholder="Ej: 123456789"
+                value={props.telInput}
+                onChange={handleInputTel}
               ></input>
+              <p className="contact__form__mailTel__status">{props.telInputMessage}
+              </p>
             </div>
           </div>
           <div className="contact__form__msg">

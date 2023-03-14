@@ -7,10 +7,6 @@ const Contact = (props) => {
   function validateTel(input) {
     return regTel.test(input);
   }
-  // function validarTelefono(inputTelefono) {
-  //   var regex = /^[0-9]+$/; // Expresión regular que verifica que el input contenga solo números
-  //   return regex.test(inputTelefono); // Devuelve true si el input es válido, false si no lo es
-  // }
   const handleInputTel = (ev) => {
     props.setTelInput(ev.target.value)
   }

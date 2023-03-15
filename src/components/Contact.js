@@ -3,18 +3,18 @@ import React, { useRef } from 'react';
 
 const Contact = (props) => {
   const form = useRef();
-  const regTel = new RegExp(/^[0-9]+$/)
+  const regTel = new RegExp(/^[0-9]+$/);
   function validateTel(input) {
     return regTel.test(input);
   }
   const handleInputTel = (ev) => {
-    props.setTelInput(ev.target.value)
-  }
+    props.setTelInput(ev.target.value);
+  };
   const sendEmail = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
     if (props.telInput) {
       if (!validateTel(props.telInput)) {
-        props.setTelInputMessage('Teléfono no válido, este campo no es obligatorio')
+        props.setTelInputMessage('Teléfono no válido');
       } else {
         emailjs
           .sendForm(
@@ -33,7 +33,6 @@ const Contact = (props) => {
           );
       }
     }
-
   };
 
   return (
@@ -108,7 +107,8 @@ const Contact = (props) => {
                 value={props.telInput}
                 onChange={handleInputTel}
               ></input>
-              <p className="contact__form__mailTel__status">{props.telInputMessage}
+              <p className="contact__form__mailTel__status">
+                {props.telInputMessage}
               </p>
             </div>
           </div>

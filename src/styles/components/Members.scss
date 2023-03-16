@@ -102,10 +102,13 @@
   }
 }
 
-.members__socials__items::after {
+.withDot::after {
   font-weight: bolder;
   content: "·";
-  margin: 0 0.2rem 0 0.2rem;
+  margin: 0 0.2rem 0 0.5rem;
+  @include desktop {
+    margin: 0 0.2rem 0 0.3rem;
+  }
 }
 
 .left {

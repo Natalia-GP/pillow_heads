@@ -1,3 +1,4 @@
+import MemberLink from "./MemberLink";
 const MembersCard = ({ eachPillow, index }) => {
     return (
         <article className={`${eachPillow.class} members__article`}  key={index}>
@@ -6,26 +7,10 @@ const MembersCard = ({ eachPillow, index }) => {
                 <h3 className="members__article__div__name">{eachPillow.name}</h3>
                 <p className="members__article__div__text">{eachPillow.description}</p>
                 <ul className="members__socials">
-                    <li className="members__socials__items">
-                        <a href={eachPillow.twitter} target="_blank" rel="noreferrer">
-                            <i className="fa-brands fa-twitter members__socials__items__icon"></i>
-                        </a>
-                    </li>
-                    <li className="members__socials__items">
-                        <a href={eachPillow.linkedin} target="_blank" rel="noreferrer">
-                            <i className="fa-brands fa-linkedin-in members__socials__items__icon"></i>
-                        </a>
-                    </li>
-                    <li className="members__socials__items">
-                        <a href={eachPillow.github} target="_blank" rel="noreferrer">
-                            <i className="fa-brands fa-github-alt members__socials__items__icon"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href={`mailto:${eachPillow.email}`}>
-                            <i className="fa-solid fa-envelope members__socials__items__icon"></i>
-                        </a>
-                    </li>
+                    {eachPillow.twitter!==''?<MemberLink link={eachPillow.twitter} iClass={'fa-brands fa-twitter'} dot={'withDot'}/>:<li></li>}                    
+                    <MemberLink link={eachPillow.linkedin} iClass={'fa-brands fa-linkedin-in'} dot={'withDot'}/>
+                    <MemberLink link={eachPillow.github} iClass={'fa-brands fa-github-alt'} dot={'withDot'}/>
+                    <MemberLink link={eachPillow.email} iClass={'fa-solid fa-envelope'}/>                    
                 </ul>
             </div>
         </article >

@@ -41,16 +41,23 @@
     }
 
     &__div {
+      @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+      }
       &__name {
         font-weight: bold;
         color: $membersname-color;
-        padding-top: 20px;
+        //padding-top: 20px;
         padding-bottom: 10px;
         font-family: $text-font;
         font-size: 20px;
         text-align: center;
+
         @include tablet {
           margin: 0rem 0.7rem 0.7rem 0.7rem;
+          text-align: revert;
         }
         @include desktop {
           font-size: 26px;
@@ -64,8 +71,10 @@
         margin: 0rem 0.7rem 0.7rem 0.7rem;
         color: $primary-text-color;
         line-height: 1.5;
+
         @include tablet {
           text-align: left;
+          text-align: revert;
         }
         @include desktop {
           font-size: 22px;
@@ -86,6 +95,7 @@
   @include tablet {
     max-width: 40%;
     margin: 0rem 0.7rem 0.7rem 0.7rem;
+    display: inline-flex;
   }
   @include desktop {
     gap: 0.7rem;
@@ -104,7 +114,7 @@
 
 .withDot::after {
   font-weight: bolder;
-  content: "·";
+  content: '·';
   margin: 0 0.2rem 0 0.5rem;
   @include desktop {
     margin: 0 0.2rem 0 0.3rem;
@@ -122,15 +132,16 @@
     flex-direction: row;
     justify-content: flex-start;
     margin-bottom: 2rem;
-    .text {
-      text-align: left;
-    }
-    .div--text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-left: 1.7rem;
-    }
+    text-align: left;
+    // .text {
+    //   text-align: left;
+    // }
+    // .div--text {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: flex-start;
+    //   margin-left: 1.7rem;
+    // }
   }
   @include desktop {
     align-items: flex-start;
@@ -149,15 +160,15 @@
     justify-content: flex-end;
     text-align: right;
     margin-bottom: 2rem;
-    .text {
-      text-align: right;
-    }
-    .div--text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-right: 1.7rem;
-    }
+    // .text {
+    //   text-align: right;
+    // }
+    // .div--text {
+    //   display: flex;
+    //   flex-direction: column;
+    //   align-items: flex-end;
+    //   margin-right: 1.7rem;
+    // }
   }
   @include desktop {
     align-items: flex-start;

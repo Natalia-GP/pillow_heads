@@ -1,6 +1,6 @@
 const Input = (props) => {
   const handleInput = (ev) => {
-    props.handleInputTel(ev.target.value)
+    props.handleInputTel(ev.target.value);
   };
   return (
     <input

@@ -1,13 +1,14 @@
 import emailjs from '@emailjs/browser';
 import React, { useRef } from 'react';
+import Input from './Input';
 const Form = (props) => {
   const form = useRef();
   const regTel = new RegExp(/^[0-9]+$/);
   function validateTel(input) {
     return regTel.test(input);
   }
-  const handleInputTel = (ev) => {
-    props.setTelInput(ev.target.value);
+  const handleInputTel = (value) => {
+    props.setTelInput(value);
   };
   const sendEmail = (e) => {
     e.preventDefault(); // prevents the page from reloading when you hit “Send”
@@ -48,14 +49,14 @@ const Form = (props) => {
         >
           Nombre completo
         </label>
-        <input
+        <Input
           className="contact__form__name__input"
           type="text"
           id="fullName"
           name="fullName"
           placeholder="Nombre..."
-          required
-        ></input>
+          required={true}
+        />
       </div>
       <div className="contact__form__mailTel">
         <div className="contact__form__mailTel__mail">
@@ -65,28 +66,28 @@ const Form = (props) => {
           >
             Email
           </label>
-          <input
+          <Input
             className="contact__form__mailTel__mail__input"
             type="email"
             id="email"
             name="email"
             placeholder="nombre.apellidos@mail.com"
-            required
-          ></input>
+            required={true}
+          />
         </div>
         <div className="contact__form__mailTel__tel">
           <label className="contact__form__mailTel__tel__label" htmlFor="phone">
             Teléfono
           </label>
-          <input
+          <Input
             className="contact__form__mailTel__tel__input"
             type="tel"
             id="phone"
             name="phone"
             placeholder="Ej: 123456789"
             value={props.telInput}
-            onChange={handleInputTel}
-          ></input>
+            handleInputTel={handleInputTel}
+          />
           <p className="contact__form__mailTel__status">
             {props.telInputMessage}
           </p>
@@ -106,12 +107,12 @@ const Form = (props) => {
           required
         ></textarea>
         <div className="contact__form__msg__send">
-          <input
+          <Input
             className="contact__form__msg__send__input"
             type="submit"
             id="submit"
             value="Enviar"
-          ></input>
+          />
         </div>
       </div>
       <p className="contact__form__msg__send__status">{props.statusMessage}</p>

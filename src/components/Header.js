@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-const Header = (props) => {
+const Header = () => {
   return (
     <header className="header">
       <h1 className="header__title">
@@ -9,11 +9,9 @@ const Header = (props) => {
         <ul className="header__nav__list">
           <li className="header__nav__list__item">
             <Link to="/#team">Equipo</Link>
-            {/* button onClick={() => scollToRef.current.scrollIntoView()}> */}
           </li>
           <li className="header__nav__list__item">
             <Link to="/#members">Quiénes somos</Link>
-            {/* <a href="#members">Quiénes somos</a> */}
           </li>
           <li className="header__nav__list__item">
             <Link to="/contact">Contacto</Link>

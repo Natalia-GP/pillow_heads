@@ -5,19 +5,24 @@
   justify-content: center;
   align-items: center;
   border-top: solid 0.1rem $secondary-text-color;
+
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding: 0.25rem 3rem 0.5rem 3rem;
   }
+
   @include desktop {
-    padding: 0.25rem 6rem 0.5rem 6rem;
+    padding: 1rem 6rem 0.5rem 6rem;
+    margin-top: 9rem;
   }
+
   &__title {
     color: $secondary-text-color;
     padding-top: 50px;
     font-size: 15px;
+
     @include tablet {
       grid-column: 1;
       grid-row: 1;
@@ -25,6 +30,7 @@
       font-size: 13px;
     }
   }
+
   &__link {
     margin-bottom: 27px;
     padding-top: 15px;
@@ -33,6 +39,7 @@
     text-transform: uppercase;
     line-height: 1.43;
     text-align: center;
+
     @include tablet {
       text-align: right;
       padding-top: 0rem;
@@ -41,6 +48,7 @@
       grid-row-start: 1;
       grid-row-end: 3;
     }
+
     &__item a {
       text-decoration: none;
       color: $primary-text-color;

@@ -12,7 +12,7 @@
   }
 
   &__title {
-    padding: 2.37rem 0 1.27rem 0;
+    padding: 2.37rem 0 2.7rem 0;
     background-color: $tertiary-color;
     color: $primary-color;
     font-weight: bold;
@@ -22,18 +22,54 @@
     font-family: $text-title;
     text-transform: uppercase;
     text-align: center;
+
     @include tablet {
       padding: 3.7rem 0 2.3rem 0;
     }
   }
 
   &__article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1.5rem 2rem 1.5rem;
+
+    @include tablet {
+      margin-bottom: 6rem;
+      height: 13rem;
+      display: grid;
+      grid-template-columns: 16rem 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-template-areas: "a b .""a c c""a d .";
+
+      @include desktop {
+        grid-template-columns: 18rem 1fr 1fr;
+        margin-bottom: 8rem;
+      }
+
+      &:nth-child(odd) {
+        grid-template-columns: 1fr 1fr 16rem;
+        grid-template-areas: ". b a""c c a"". d a";
+        text-align: right;
+        justify-items: end;
+
+        @include desktop {
+          grid-template-columns: 1fr 1fr 18rem;
+        }
+      }
+    }
+
     &__img {
       width: 13rem;
       height: 13rem;
       border: solid 0.5rem $details-color;
       border-radius: 4px;
       object-fit: cover;
+
+      @include tablet {
+        grid-area: a;
+      }
+
       @include desktop {
         width: 15rem;
         height: 15rem;
@@ -48,12 +84,11 @@
         padding-bottom: 10px;
         font-family: $text-font;
         font-size: 20px;
-        text-align: center;
+
         @include tablet {
-          margin: 0rem 0.7rem 0.7rem 0.7rem;
-        }
-        @include desktop {
-          font-size: 26px;
+          padding-top: 0;
+          text-align: revert;
+          grid-area: b;
         }
       }
 
@@ -61,14 +96,13 @@
         font-size: 16px;
         text-align: center;
         font-family: $text-font;
-        margin: 0rem 0.7rem 0.7rem 0.7rem;
+
         color: $primary-text-color;
         line-height: 1.5;
+
         @include tablet {
-          text-align: left;
-        }
-        @include desktop {
-          font-size: 22px;
+          text-align: revert;
+          grid-area: c;
         }
       }
     }
@@ -79,14 +113,16 @@
   padding-top: 20px;
   padding-bottom: 23px;
   display: flex;
-  gap: 4px;
-  justify-content: center;
+  gap: 10px;
   color: $primary-color;
   text-align: center;
+
   @include tablet {
-    max-width: 40%;
-    margin: 0rem 0.7rem 0.7rem 0.7rem;
+    display: inline-flex;
+    grid-area: d;
+
   }
+
   @include desktop {
     gap: 0.7rem;
   }
@@ -94,70 +130,21 @@
   &__items {
     &__icon {
       color: $primary-color;
-      padding: 0.2rem;
+
       @include desktop {
-        transform: scale(1.5);
+        transform: scale(1.2);
+        padding: 0.3rem;
       }
     }
   }
 }
 
-.members__socials__items::after {
+.withDot::after {
   font-weight: bolder;
-  content: "·";
-  margin: 0 0.2rem 0 0.2rem;
-}
+  content: '·';
+  margin: 0 0.2rem 0 0.5rem;
 
-.left {
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @include tablet {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin-bottom: 2rem;
-    .text {
-      text-align: left;
-    }
-    .div--text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-left: 1.7rem;
-    }
-  }
   @include desktop {
-    align-items: flex-start;
-    margin-left: 1.7rem;
-  }
-}
-.right {
-  padding-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  @include tablet {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    text-align: right;
-    margin-bottom: 2rem;
-    .text {
-      text-align: right;
-    }
-    .div--text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      margin-right: 1.7rem;
-    }
-  }
-  @include desktop {
-    align-items: flex-start;
-    margin-right: 1.7rem;
+    margin: 0 0.15rem 0 0.6rem;
   }
 }

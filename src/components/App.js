@@ -24,7 +24,7 @@ function App() {
       name: 'Ana Vellisco',
       description:
         'Ex-trabajadora del sector social. Me apasionan los retos y estar en continua formación de diversas áreas. Me considero una persona  minuciosa y paciente, a la que le gusta trabajar en equipo. Mi nuevo reto es ser desarrolladora web, gracias a Adalab.',
-      twitter: 'https://twitter.com/brunadasilvabz',
+      twitter: '',
       github: 'https://github.com/avbbs',
       email: 'ana.vellisco@gmail.com',
       photo: anaPhoto,

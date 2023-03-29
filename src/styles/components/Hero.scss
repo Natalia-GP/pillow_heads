@@ -25,10 +25,12 @@
       font-weight: bolder;
       line-height: 1.39;
       transform: translateY(50%);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       @include tablet {
         margin: 0 17rem 0 2.8rem;
         padding: 1rem 1rem 0.7rem 2rem;
         transform: translateY(0%);
+        box-shadow: none;
       }
       @include desktop {
         font-size: 24px;

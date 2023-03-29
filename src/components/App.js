@@ -70,21 +70,21 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              <>
-                <Hero />
-                <Skills />
-                <Team />
-                <Members pillows={pillows} />
-              </>
-            }
-          />
-          <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} telInput={telInput} setTelInput={setTelInput} telInputMessage={telInputMessage} setTelInputMessage={setTelInputMessage} />}></Route>
-        </Routes>
+      <Routes>
+        <Route
+          exact
+          path="/"
+          element={
+            <>
+              <Hero />
+              <Team />
+              <Skills />
+              <Members pillows={pillows} />
+            </>
+          }
+        />
+        <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} />}></Route>
+      </Routes>
       </main>
       <Footer />
     </div>

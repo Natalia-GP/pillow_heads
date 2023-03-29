@@ -1,6 +1,7 @@
 const Skills = () => {
   return (
     <article className="skills">
+      <div className="square"></div>
       <article className="skills__strength">
         <h3 className="skills__title">Fortalezas</h3>
         <p className="skills__text">

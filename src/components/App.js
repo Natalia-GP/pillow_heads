@@ -75,8 +75,8 @@ function App() {
           element={
             <>
               <Hero />
-              <Skills />
               <Team />
+              <Skills />
               <Members pillows={pillows} />
             </>
           }

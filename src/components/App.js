@@ -83,7 +83,7 @@ function App() {
             </>
           }
         />
-        <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} />}></Route>
+        <Route path="/contact" element={<Contact statusMessage={statusMessage} setStatusMessage={setStatusMessage} telInput={telInput} setTelInput={setTelInput} telInputMessage={telInputMessage} setTelInputMessage={setTelInputMessage}  />}></Route>
       </Routes>
       </main>
       <Footer />

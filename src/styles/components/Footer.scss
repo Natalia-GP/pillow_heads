@@ -5,11 +5,6 @@
   justify-content: center;
   align-items: center;
   border-top: solid 0.1rem $secondary-text-color;
-<<<<<<< HEAD
-
-=======
-  background-color: blue;
->>>>>>> form
   @include tablet {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

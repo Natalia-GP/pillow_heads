@@ -17,7 +17,7 @@ const MembersCard = ({ eachPillow, index }) => {
             dot={'withDot'}
           />
         ) : (
-          <li></li>
+          ''
         )}
         <MemberLink
           link={eachPillow.linkedin}
